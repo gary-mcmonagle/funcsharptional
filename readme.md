@@ -1,0 +1,1 @@
+A little project to test out the functional capabilities of c# while doing AOC
