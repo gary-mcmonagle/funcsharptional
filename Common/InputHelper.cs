@@ -7,4 +7,7 @@ public static class InputHelper
     public static IEnumerable<int> GetInputLinesOfInts(string fileName) =>
         File.ReadAllLines(fileName).Select(int.Parse);
 
+    public static IEnumerable<T> GetInput<T>(string fileName, Func<string, int?, T> parseLine) => File.ReadAllLines(fileName).Select((x, i) => parseLine(x, i));
+    public static IEnumerable<T> GetInput<T>(string fileName, Func<string, T> parseLine) => File.ReadAllLines(fileName).Select((x, i) => parseLine(x));
+
 }
